@@ -70,6 +70,17 @@ function TypographyPreview() {
       <Text variant="button-l">Button Large</Text>
       <Text variant="button-m">Button Medium</Text>
       <Text variant="button-s">Button Small</Text>
+
+      {/* Color examples */}
+      <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
+        <Text variant="h3" as="h3" className="text-ocean-500">Ocean 500</Text>
+        <Text variant="h3" as="h3" className="text-volcano-500">Volcano 500</Text>
+        <Text variant="h3" as="h3" className="text-desert-500">Desert 500</Text>
+        <Text variant="h3" as="h3" className="text-forest-500">Forest 500</Text>
+        <Text variant="h3" as="h3" className="text-twilight-500">Twilight 500</Text>
+        <Text variant="h3" as="h3" className="text-flamingo-500">Flamingo 500</Text>
+        <Text variant="h3" as="h3" className="text-sumi-900">Sumi 900</Text>
+      </div>
     </div>
   );
 }
