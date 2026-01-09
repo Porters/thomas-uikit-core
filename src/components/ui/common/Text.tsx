@@ -27,13 +27,35 @@ interface TextProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
+const variantToTag: Record<TextVariant, React.ElementType> = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  'h3-bold': 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  'body-l': 'p',
+  'body-m': 'p',
+  'body-m-bold': 'p',
+  'body-s': 'p',
+  'label-l': 'label',
+  'label-m': 'label',
+  'label-s': 'label',
+  'caption-l': 'span',
+  'caption-m': 'span',
+  'button-l': 'span',
+  'button-m': 'span',
+  'button-s': 'span',
+};
+
 export const Text: React.FC<TextProps> = ({
   variant = "body-m",
-  as: Component = "span",
+  as,
   children,
   className = "",
   ...props
 }) => {
+  const Component = as || variantToTag[variant] || 'span';
   return (
     <Component
       className={`text-${variant} ${className}`.trim()}
